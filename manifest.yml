@@ -1,0 +1,20 @@
+declared-services:
+  cloudant-nosql-db:
+    label: cloudantNoSQLDB
+    plan: Shared
+  sendgrid-email:
+    label: sendgrid
+    plan: free
+  workload-scheduler:
+    label: WorkloadScheduler
+    plan: Standard    
+applications:
+- services:
+  - cloudant-nosql-db
+  - sendgrid-email
+  - workload-scheduler
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  disk_quota: 1024M
